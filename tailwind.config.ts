@@ -15,7 +15,6 @@ const config: Config = {
                 'dark-blue-text': 'hsl(200, 15%, 8%)',
                 'dark-gray': 'hsl(0, 0%, 52%)',
                 'light-gray-bg': 'hsl(0, 0%, 98%)',
-                'white-text': 'hsl(0, 0%, 100%)',
             },
         },
     },

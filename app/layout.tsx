@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Nunito_Sans } from 'next/font/google'
 import './globals.css'
-import { ThemeProvider } from '@/app/Providers/Theme'
-import { Header } from './components/Header'
+import { Providers } from './Providers/Providers'
+import { Header } from '@/app/components/Header'
 
 const nunitoSans = Nunito_Sans({ subsets: ['latin'] })
 
@@ -17,14 +17,14 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <body
                 className={`${nunitoSans.className} bg-light-gray-bg dark:bg-dark-blue-bg`}
             >
-                <ThemeProvider>
+                <Providers>
                     <Header />
                     {children}
-                </ThemeProvider>
+                </Providers>
             </body>
         </html>
     )
