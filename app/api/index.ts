@@ -1,3 +1,4 @@
 export { getCountries, getCountriesWithDelay } from './getCountries'
 export { getCountry } from './getCountry'
-export type { Country, CountryDetailed } from './types'
+export { getBorderCountry } from './getBorderCountries'
+export type { Country, CountryDetailed, BorderCountry } from './types'

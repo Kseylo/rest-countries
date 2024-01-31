@@ -1,3 +1,5 @@
+import { BorderCountries } from '@/app/country/[name]/BorderCountries'
+
 export interface Country {
     flags: {
         png: string
@@ -26,4 +28,8 @@ export interface CountryDetailed extends Country {
         [key: string]: string
     }
     borders: string[]
+}
+
+export interface BorderCountry {
+    name: Pick<Country, 'name'>
 }
