@@ -1,39 +1,18 @@
-'use client'
-
-import { useTheme } from 'next-themes'
-import { IoMoonOutline, IoMoon } from 'react-icons/io5'
-import { useEffect, useState } from 'react'
-
+import { ThemeSwitcher } from './ThemeSwitcher'
+import { Suspense } from 'react'
 export function Header() {
-    const [mounted, setMounted] = useState(false)
-    const { theme, setTheme } = useTheme()
-
-    useEffect(() => {
-        setMounted(true)
-    }, [])
-
-    if (!mounted) {
-        return null
-    }
-
     return (
-        <div
-            className={`dark:bg-dark-blue flex items-center justify-between bg-white px-4 py-8 shadow-md`}
-        >
-            <h1 className={'font-bold dark:text-white'}>Where in the world?</h1>
+        <header className={`bg-white shadow-md dark:bg-dark-blue`}>
             <div
-                className={'flex cursor-pointer items-center gap-2'}
-                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className={
+                    'mx-auto flex max-w-screen-2xl items-center justify-between px-6 py-8 md:px-16'
+                }
             >
-                {theme === 'dark' ? (
-                    <IoMoon className={'text-white'} />
-                ) : (
-                    <IoMoonOutline className={'text-dark-blue-text'} />
-                )}
-                <p className={'text-dark-blue-text dark:text-white'}>
-                    Dark Mode
-                </p>
+                <h1 className={'font-bold dark:text-white'}>
+                    Where in the world?
+                </h1>
+                <ThemeSwitcher />
             </div>
-        </div>
+        </header>
     )
 }
