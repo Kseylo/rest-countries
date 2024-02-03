@@ -25,7 +25,7 @@ export async function generateMetadata({ params: { name: urlName } }: Params) {
             The capital city is ${capital.join(', ')}. It has a population of ${population.toLocaleString()} people.`,
         keywords: `${name.common}, ${name.official}, ${region}, ${subregion}, ${capital.join(', ')}`,
         openGraph: {
-            images: [{ url: flags.svg }],
+            images: [{ url: flags.png }],
         },
     }
 }
