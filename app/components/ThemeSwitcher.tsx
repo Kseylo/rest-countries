@@ -5,7 +5,7 @@ import { IoMoon, IoMoonOutline } from 'react-icons/io5'
 
 export function ThemeSwitcher() {
     const [mounted, setMounted] = useState(false)
-    const { theme, setTheme } = useTheme()
+    const { theme, setTheme, resolvedTheme } = useTheme()
 
     useEffect(() => {
         setMounted(true)
@@ -19,7 +19,7 @@ export function ThemeSwitcher() {
             className={'flex cursor-pointer items-center gap-2'}
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
         >
-            {theme === 'dark' ? (
+            {theme === 'dark' || resolvedTheme === 'dark' ? (
                 <IoMoon className={'text-white'} />
             ) : (
                 <IoMoonOutline className={'text-dark-blue-text'} />

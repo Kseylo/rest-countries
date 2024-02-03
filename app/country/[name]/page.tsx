@@ -18,20 +18,15 @@ export async function generateMetadata({ params: { name: urlName } }: Params) {
     const commonName = convertUrlName(urlName)
     const countryDataList = await getCountry(commonName)
     const countryData = countryDataList[0]
-    const { name, capital, region, subregion, population, flags } = countryData
+    const { name, capital, region, subregion, population } = countryData
     return {
         title: `${name.common}`,
         description: `Officially known as ${name.official}, ${name.common} is a country located in ${region}. 
             The capital city is ${capital.join(', ')}. It has a population of ${population.toLocaleString()} people.`,
         keywords: `${name.common}, ${name.official}, ${region}, ${subregion}, ${capital.join(', ')}`,
-        metadataBase: new URL(
-            `https://rest-countries.vercel.app/country/${urlName}`,
-        ),
         openGraph: {
             title: `${name.common}`,
-            description: `Officially known as ${name.official}, ${name.common} is a country located in ${region}. 
-            The capital city is ${capital.join(', ')}. It has a population of ${population.toLocaleString()} people.`,
-            images: flags.svg,
+            description: `Officially known as ${name.official}, ${name.common} is a country located in ${region}.`,
         },
     }
 }
