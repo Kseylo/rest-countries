@@ -3,6 +3,7 @@ import { SearchCountry } from './components/Countries'
 import { FilterByRegion } from './components/Countries'
 import { CountriesListSkeleton } from './components/Countries'
 import { Suspense } from 'react'
+import { ErrorBoundary } from 'next/dist/client/components/error-boundary'
 export default async function Home({
     searchParams,
 }: {
