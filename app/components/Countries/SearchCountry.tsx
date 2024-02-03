@@ -16,7 +16,7 @@ export function SearchCountry() {
         replace(`${pathname}?${params.toString()}`)
     }
     return (
-        <div className={'relative w-full md:max-w-lg'}>
+        <div className={'relative flex-1 md:max-w-lg'}>
             <div className={'absolute inset-y-0 ml-6 flex items-center'}>
                 <MdOutlineSearch
                     className={'text-dark-gray dark:text-white'}
@@ -31,7 +31,7 @@ export function SearchCountry() {
                     'w-full flex-1 rounded-md bg-white p-3 pl-16 font-light text-dark-gray shadow outline-none placeholder:text-dark-gray dark:bg-dark-blue dark:text-white dark:placeholder:text-white'
                 }
                 defaultValue={searchParams.get('query')?.toString()}
-            />
+            ></input>
         </div>
     )
 }

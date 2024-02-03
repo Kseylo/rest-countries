@@ -1,0 +1,1 @@
+export { convertUrlName } from './convertUrlName'

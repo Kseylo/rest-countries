@@ -1,10 +1,10 @@
 import { BorderCountry } from './types'
-const FIELDS = ['name']
-export async function getBorderCountry(name: string): Promise<BorderCountry[]> {
+export async function getBordersCountries(
+    borders: string[],
+): Promise<BorderCountry[]> {
     const res = await fetch(
-        `https://restcountries.com/v3.1/name/${name}?fields=${FIELDS.join(',')}`,
+        `https://restcountries.com/v3.1/alpha?codes=${borders.join(',')}&fields=name`,
     )
-    console.log('res', res)
     if (!res.ok) {
         throw new Error('Failed to fetch data')
     }

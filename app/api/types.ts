@@ -31,5 +31,9 @@ export interface CountryDetailed extends Country {
 }
 
 export interface BorderCountry {
-    name: Pick<Country, 'name'>
+    name: {
+        common: string
+        official: string
+        nativeName: { [key: string]: { official: string } }
+    }
 }
